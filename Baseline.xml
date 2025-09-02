@@ -1,0 +1,122 @@
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd" identifier="m1">
+<name xml:lang="en">(new model)</name>
+<!--  ========== ELEMENTS ==========  -->
+<elements>
+<element identifier="e1" xsi:type="BusinessActor">
+<name xml:lang="en">Burger</name>
+</element>
+<element identifier="e2" xsi:type="BusinessRole">
+<name xml:lang="en">Aangifteplichtige</name>
+</element>
+<element identifier="e3" xsi:type="BusinessProcess">
+<name xml:lang="en">Aangifte Indienen</name>
+</element>
+<element identifier="e4" xsi:type="BusinessProcess">
+<name xml:lang="en">Verwerking Aangifte</name>
+</element>
+<element identifier="e5" xsi:type="BusinessProcess">
+<name xml:lang="en">Teruggave/Betaling</name>
+</element>
+<element identifier="e6" xsi:type="ApplicationService">
+<name xml:lang="en">Aangifte Portaal Service</name>
+</element>
+<element identifier="e7" xsi:type="ApplicationService">
+<name xml:lang="en">Verwerking Service</name>
+</element>
+<element identifier="e8" xsi:type="ApplicationService">
+<name xml:lang="en">Betaal Service</name>
+</element>
+<element identifier="e9" xsi:type="ApplicationService">
+<name xml:lang="en">DigiD (KOPPELVLAK)</name>
+</element>
+<element identifier="e10" xsi:type="ApplicationComponent">
+<name xml:lang="en">Aangifte portaal</name>
+</element>
+<element identifier="e11" xsi:type="ApplicationComponent">
+<name xml:lang="en">DigiD</name>
+</element>
+<element identifier="e12" xsi:type="ApplicationComponent">
+<name xml:lang="en">Aangifte verwerking systeem</name>
+</element>
+<element identifier="e13" xsi:type="ApplicationComponent">
+<name xml:lang="en">Betaling systeem</name>
+</element>
+<element identifier="e14" xsi:type="DataObject">
+<name xml:lang="en">Aangifte gegevens</name>
+</element>
+<element identifier="e15" xsi:type="DataObject">
+<name xml:lang="en">Betaling gegevens</name>
+</element>
+<element identifier="e16" xsi:type="TechnologyService">
+<name xml:lang="en">Hosting Service</name>
+</element>
+<element identifier="e17" xsi:type="Node">
+<name xml:lang="en">Belastingdienst Datacenter</name>
+</element>
+</elements>
+<!--  ========== RELATIONSHIPS ==========  -->
+<relationships>
+<relationship identifier="r1" source="e9" target="e10" xsi:type="Serving"/>
+<relationship identifier="r2" source="e1" target="e2" xsi:type="Assignment"/>
+<relationship identifier="r3" source="e2" target="e3" xsi:type="Assignment"/>
+<relationship identifier="r4" source="e3" target="e4" xsi:type="Triggering"/>
+<relationship identifier="r5" source="e7" target="e4" xsi:type="Serving"/>
+<relationship identifier="r6" source="e6" target="e3" xsi:type="Serving"/>
+<relationship identifier="r7" source="e4" target="e5" xsi:type="Triggering"/>
+<relationship identifier="r8" source="e8" target="e5" xsi:type="Serving"/>
+<relationship identifier="r9" source="e10" target="e6" xsi:type="Realization"/>
+<relationship identifier="r10" source="e12" target="e7" xsi:type="Realization"/>
+<relationship identifier="r11" source="e12" target="e14" xsi:type="Access" accessType="Write"/>
+<relationship identifier="r12" source="e13" target="e15" xsi:type="Access" accessType="Write"/>
+<relationship identifier="r13" source="e13" target="e8" xsi:type="Realization"/>
+<relationship identifier="r14" source="e16" target="e9" xsi:type="Serving"/>
+<relationship identifier="r15" source="e16" target="e6" xsi:type="Serving"/>
+<relationship identifier="r16" source="e16" target="e7" xsi:type="Serving"/>
+<relationship identifier="r17" source="e17" target="e16" xsi:type="Assignment"/>
+<relationship identifier="r18" source="e16" target="e8" xsi:type="Serving"/>
+</relationships>
+<!--  ========== VIEWS ==========  -->
+<views>
+<diagrams>
+<view identifier="v1" xsi:type="Diagram">
+<name xml:lang="en">Baseline</name>
+<!--  NODES  -->
+<node identifier="n1" elementRef="e1" xsi:type="Element" x="552" y="144" w="169" h="61"/>
+<node identifier="n2" elementRef="e2" xsi:type="Element" x="348" y="144" w="169" h="61"/>
+<node identifier="n3" elementRef="e3" xsi:type="Element" x="348" y="240" w="169" h="61"/>
+<node identifier="n4" elementRef="e4" xsi:type="Element" x="552" y="240" w="169" h="61"/>
+<node identifier="n5" elementRef="e5" xsi:type="Element" x="768" y="240" w="169" h="61"/>
+<node identifier="n6" elementRef="e6" xsi:type="Element" x="348" y="336" w="169" h="61"/>
+<node identifier="n7" elementRef="e7" xsi:type="Element" x="552" y="336" w="169" h="61"/>
+<node identifier="n8" elementRef="e8" xsi:type="Element" x="768" y="336" w="169" h="61"/>
+<node identifier="n9" elementRef="e9" xsi:type="Element" x="132" y="336" w="169" h="61"/>
+<node identifier="n10" elementRef="e10" xsi:type="Element" x="348" y="432" w="109" h="61"/>
+<node identifier="n11" elementRef="e12" xsi:type="Element" x="612" y="432" w="109" h="61"/>
+<node identifier="n12" elementRef="e13" xsi:type="Element" x="828" y="432" w="109" h="61"/>
+<node identifier="n13" elementRef="e14" xsi:type="Element" x="612" y="516" w="109" h="61"/>
+<node identifier="n14" elementRef="e15" xsi:type="Element" x="828" y="516" w="109" h="61"/>
+<node identifier="n15" elementRef="e16" xsi:type="Element" x="348" y="612" w="373" h="61"/>
+<node identifier="n16" elementRef="e17" xsi:type="Element" x="132" y="612" w="169" h="61"/>
+<!--  CONNECTIONS  -->
+<connection identifier="c1" relationshipRef="r2" xsi:type="Relationship" source="n1" target="n2"/>
+<connection identifier="c2" relationshipRef="r3" xsi:type="Relationship" source="n2" target="n3"/>
+<connection identifier="c3" relationshipRef="r4" xsi:type="Relationship" source="n3" target="n4"/>
+<connection identifier="c4" relationshipRef="r7" xsi:type="Relationship" source="n4" target="n5"/>
+<connection identifier="c5" relationshipRef="r6" xsi:type="Relationship" source="n6" target="n3"/>
+<connection identifier="c6" relationshipRef="r5" xsi:type="Relationship" source="n7" target="n4"/>
+<connection identifier="c7" relationshipRef="r8" xsi:type="Relationship" source="n8" target="n5"/>
+<connection identifier="c8" relationshipRef="r1" xsi:type="Relationship" source="n9" target="n10"/>
+<connection identifier="c9" relationshipRef="r9" xsi:type="Relationship" source="n10" target="n6"/>
+<connection identifier="c10" relationshipRef="r10" xsi:type="Relationship" source="n11" target="n7"/>
+<connection identifier="c11" relationshipRef="r11" xsi:type="Relationship" source="n11" target="n13"/>
+<connection identifier="c12" relationshipRef="r12" xsi:type="Relationship" source="n12" target="n14"/>
+<connection identifier="c13" relationshipRef="r13" xsi:type="Relationship" source="n12" target="n8"/>
+<connection identifier="c14" relationshipRef="r15" xsi:type="Relationship" source="n15" target="n6"/>
+<connection identifier="c15" relationshipRef="r16" xsi:type="Relationship" source="n15" target="n7"/>
+<connection identifier="c16" relationshipRef="r18" xsi:type="Relationship" source="n15" target="n8"/>
+<connection identifier="c17" relationshipRef="r17" xsi:type="Relationship" source="n16" target="n15"/>
+<connection identifier="c18" relationshipRef="r14" xsi:type="Relationship" source="n15" target="n9"/>
+</view>
+</diagrams>
+</views>
+</model>
